@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>About Us | Maharashtrian Thali</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        html, body, .page-wrapper {
+            width: 100%;
+            min-height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            -webkit-text-size-adjust: 100%;
+            -webkit-overflow-scrolling: touch;
+            width: 100%;
+        }
+        
+        .page-wrapper {
+            flex: 1 0 auto;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        footer {
+            background: #222;
+            color: #fff;
+            padding: 40px 0 0;
+            margin-top: auto;
+            width: 100%;
+            flex-shrink: 0;
+        }
+
+        /* Make footer responsive */
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+.footer-column {
+    flex: 1 1 250px;
+    min-width: 200px;
+}
+
+/* Remove fixed width from .foot */
+.foot {
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+        
+        .container {
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 30px;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #f8f0e5;
+            color: #e67e22;
+            border-radius: 50%;
+            font-size: 18px;
+            
+        }
+
+        .facebook-css a img{
+            width:80px;
+            height:80px;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/kitchen.jpg') no-repeat center center/cover;
+        }
+        
+        .about-content {
+            padding: 80px 0;
+        }
+        
+        .about-story, .our-mission, .our-chef {
+            margin-bottom: 60px;
+        }
+        
+        .about-story .container, .our-mission .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-image img, .mission-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .chef-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .chef-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .chef-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .chef-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .chef-info {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .chef-social {
+            margin-top: 15px;
+        }
+        
+        .chef-social a {
+            display: inline-block;
+            margin: 0 5px;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+       
+        .foot{
+            width: 400px;
+        }
+        
+        @media (max-width: 768px) {
+            html, body, .page-wrapper {
+                width: 100% !important;
+                max-width: 100% !important;
+                overflow-x: hidden;
+                position: relative;
+            }
+            
+            .container {
+                padding: 0 15px;
+                width: 100%;
+                max-width: 100%;
+            }
+            .about-story .container, .our-mission .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .about-image, .mission-image {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <!-- Header -->
+    <header>
+        <div class="container px-0 px-md-3">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="Maharashtrian Thali" class="logo-img">
+                </a>
+                
+                <!-- Mobile menu toggle (checkbox + icon) -->
+                <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-checkbox">
+                <label for="mobile-menu-toggle" class="mobile-menu-icon">
+                    <i class="fas fa-bars"></i>
+                    <i class="fas fa-times"></i>
+                </label>
+                
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html" class="active">About</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero position-relative overflow-hidden">
+        <img src="images/restaurant-interior.jpg" alt="Our Restaurant" class="hero-img position-absolute top-0 start-0 w-100 h-100">
+        <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100"></div>
+        <div class="hero-content position-relative z-index-1 text-center text-white p-4">
+            <div class="container">
+                <h1 class="display-4 fw-bold mb-3">Our Story</h1>
+                <p class="lead">Discover the journey behind our authentic Maharashtrian flavors</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Story -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <div class="pe-lg-5">
+                        <h2 class="display-5 fw-bold mb-4">Welcome to Maharashtrian Thali</h2>
+                        <p class="lead">Founded in 2010, Maharashtrian Thali was born out of a deep love for traditional Maharashtrian cuisine. Our founder, Sidhhappa Hegde, wanted to bring the authentic flavors of Maharashtra to food lovers everywhere.</p>
+                        <p>What started as a small family restaurant has now grown into one of the most beloved Maharashtrian dining destinations, known for its commitment to quality, authenticity, and warm hospitality.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="images/restaurant-interior.jpg" alt="Our Restaurant" class="img-fluid rounded-3 shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Mission -->
+    <section class="bg-light py-5">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="ps-lg-5">
+                        <h2 class="display-5 fw-bold mb-4">Our Mission</h2>
+                        <p class="lead">At Maharashtrian Thali, our mission is simple: to serve authentic Maharashtrian cuisine made with the freshest ingredients and traditional cooking methods.</p>
+                        <p>We believe in preserving the rich culinary heritage of Maharashtra while adding our own modern touch. We source our ingredients locally whenever possible and work closely with farmers and suppliers who share our commitment to quality and sustainability.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <img src="images/ingredients.jpg" alt="Fresh Ingredients" class="img-fluid rounded-3 shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Chef -->
+    <section class="our-chef">
+        <div class="container px-0 px-md-3">
+            <div class="section-title">
+                <h2>Meet Our Founders</h2>
+                <p>The talented individuals behind our delicious creations</p>
+            </div>
+            <div class="chef-grid">
+                <div class="chef-card">
+                    <div class="chef-image">
+                        <img src="images/chef-1.jpg" alt="Head Chef">
+                    </div>
+                    <div class="chef-info">
+                        <h3>Siddhappa Hegde</h3>
+                        <p class="position">Founder</p>
+                        <p>With over 20 years of experience in Food industry, specializing in business and taste management</p>
+                    </div>
+                </div>
+                <div class="chef-card">
+                    <div class="chef-image">
+                        <img src="images/chef2.jpg" alt="Sous Chef">
+                    </div>
+                    <div class="chef-info">
+                        <h3>Samarth Hegde</h3>
+                        <p class="position">Co-Founder</p>
+                        <p>Specializing in traditional food.</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5 mt-auto">
+        <div class="container px-0 px-md-3">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Maharashtrian Thali</h3>
+                    <p>Experience the authentic taste of Maharashtra with our traditional recipes and warm hospitality.</p>
+                    <div class="social-links">
+                        <a href="https://www.zomato.com/pune/siddu-maharashtrian-thali-rasta-peth" aria-label="Zomato"><img src="images/zomato.svg" alt="Zomato"></a>
+                        <a href="https://www.swiggy.com/city/pune/maharashtrian-thali-rasta-peth-rest315612" aria-label="Swiggy"><img src="images/swiggy.png" alt="Swiggy"></a>
+                        <a href="https://www.instagram.com/_maharashtrian_thali_siddhu_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Instagram"><img src="images/instagram.png" alt="Instagram"></a>
+                        <div class = "facebook-css">
+                            <a href="https://www.facebook.com/profile.php?id=61580928208877" aria-label="Facebook"><img src="images/facebook.png" alt="Facebook"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="menu.html">Menu</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> GV98+G76, Rasta Peth, Pune, Maharashtra 411002</p>
+                    <p><i class="fas fa-phone"></i>+91 86001 55129</p>
+                    <p><i class="fas fa-envelope"></i> Maharashtrianthali@gmail.com</p>
+                </div>
+                <div class="footer-column">
+                    
+                    <h3>Opening Hours</h3>
+                    <p>Monday - Friday: 11:00 AM - 01:00 AM</p>
+                    <p>Saturday - Sunday: 11:00 AM - 12:00 PM</p>
+                    
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Maharashtrian Thali. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

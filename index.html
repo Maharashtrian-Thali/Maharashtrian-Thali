@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Maharashtrian Thali | Home</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        html, body, .page-wrapper {
+            width: 100%;
+            min-height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            -webkit-text-size-adjust: 100%;
+            -webkit-overflow-scrolling: touch;
+            width: 100%;
+        }
+        
+        .page-wrapper {
+            flex: 1 0 auto;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        footer {
+            background: #222;
+            color: #fff;
+            padding: 40px 0 0;
+            margin-top: auto;
+            width: 100%;
+            flex-shrink: 0;
+        }
+        
+       .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+.footer-column {
+    flex: 1 1 250px;
+    min-width: 200px;
+}
+
+/* Remove fixed width from .foot */
+.foot {
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+        
+        .container {
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        @media (max-width: 768px) {
+            html, body, .page-wrapper {
+                width: 100% !important;
+                max-width: 100% !important;
+                overflow-x: hidden;
+                position: relative;
+            }
+            
+            .container {
+                padding: 0 15px;
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 30px;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #f8f0e5;
+            color: #e67e22;
+            border-radius: 50%;
+            font-size: 18px;
+            
+        }
+        .facebook-css a img{
+           width:80px;
+            height:80px;
+        }
+        
+        .foot {
+            width: 400px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: #1e3a8a;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(30, 58, 138, 0.3);
+            padding: 5px 0;
+            border-bottom: 2px solid #ea580c;
+        }
+        
+        
+        .logo {
+            display: inline-block;
+            text-decoration: none;
+            width: 200px;
+            height: 95px;
+            margin-right: auto;
+        }
+        
+        .logo-img {
+            width: 100%;
+            height: 98px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        /* Mobile Menu Toggle */
+        .mobile-menu-checkbox {
+            display: none;
+        }
+        
+        .mobile-menu-icon {
+            display: none;
+            cursor: pointer;
+            z-index: 1001;
+            font-size: 24px;
+            color: #ffffff;
+            transition: transform 0.3s ease;
+            width: 30px;
+            height: 24px;
+            position: relative;
+        }
+        
+        .mobile-menu-icon .fa-times {
+            display: none;
+        }
+        
+        .mobile-menu-checkbox:checked + .mobile-menu-icon .fa-bars {
+            display: none;
+        }
+        
+        .mobile-menu-checkbox:checked + .mobile-menu-icon .fa-times {
+            display: block;
+            color: #ea580c;
+        }
+        
+        /* Main Navigation */
+        .main-nav {
+            display: flex;
+            align-items: center;
+        }
+        
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .main-nav li {
+            margin-left: 30px;
+        }
+        
+        .main-nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .main-nav a:hover,
+        .main-nav a.active {
+            color: #ea580c;
+        }
+        
+        .main-nav a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #ea580c;
+            bottom: -5px;
+            left: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .main-nav a:hover:after,
+        .main-nav a.active:after {
+            width: 100%;
+        }
+        
+        /* Mobile styles */
+        @media (max-width: 768px) {
+            .logo {
+                height: 76px;
+            }
+            .logo-img {
+                height: 85px;
+                width: auto;
+                max-width: 100%;
+            }
+            .header-content {
+                padding: 0 15px;
+            }
+            
+            .mobile-menu-icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                right: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            
+            .main-nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                max-width: 300px;
+                height: 100vh;
+                background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+                box-shadow: -5px 0 15px rgba(234, 88, 12, 0.3);
+                transition: 0.3s ease-in-out;
+                z-index: 1000;
+                padding: 80px 20px 40px;
+                display: flex;
+                align-items: center;
+            }
+            
+            .mobile-menu-checkbox:checked ~ .main-nav {
+                right: 0;
+            }
+            
+            .main-nav ul {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .main-nav li {
+                margin: 15px 0;
+                text-align: center;
+            }
+            
+            .main-nav a {
+                display: block;
+                padding: 10px 0;
+                font-size: 1.1rem;
+                color: #ffffff;
+            }
+            
+            .main-nav a:after {
+                display: none;
+            }
+        }
+</style>
+
+<body class="d-flex flex-column min-vh-100">
+    <!-- Header -->
+    <header>
+        <div class="container px-0 px-md-3">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="Maharashtrian Thali" class="logo-img" >
+                </a>
+                
+                <!-- Mobile menu toggle with Font Awesome icons -->
+                <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-checkbox">
+                <label for="mobile-menu-toggle" class="mobile-menu-icon">
+                    <i class="fas fa-bars"></i>
+                    <i class="fas fa-times"></i>
+                </label>
+                
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero position-relative overflow-hidden">
+        <img src="images/restaurant-interior.jpg" alt="Restaurant" class="hero-img position-absolute top-0 start-0 w-100 h-100">
+        <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100"></div>
+        <div class="hero-content position-relative z-index-1 text-center text-white p-4">
+            <div class="container">
+                <h1 class="display-4 fw-bold mb-3 hero-title">Authentic Maharashtrian Cuisine</h1>
+                <p class="lead mb-4 hero-lead">Experience the rich and diverse flavors of Maharashtra with our traditional recipes passed down through generations.</p>
+                <a href="menu.html" class="btn btn-primary btn-lg px-4 hero-cta">View Our Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Dishes -->
+    <section class="featured-dishes py-5">
+        <div class="container">
+            <div class="section-title text-center mb-5">
+                <h2 class="display-5 fw-bold mb-2 animate-on-scroll">Our Specialties</h2>
+                <p class="lead animate-on-scroll stagger-1">Discover our most loved dishes</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm animate-on-scroll stagger-1">
+                        <img src="images/thali.png" class="card-img-top img-fluid" alt="Maharashtrian Thali" style="height: 400px; object-fit: cover;">
+                        <div class="card-body text-center">
+                            <h3 class="h5 fw-bold">Special Maharashtrian Thali</h3>
+                            <p class="card-text">A heartfelt embrace of Maharashtra — warm breads cradling rich paneer and vibrant bhajis, golden varan, fragrant jeera rice, cooling dahi, fiery thecha, tangy achar, earthy shenga chutney, and crisp papad. Tradition, spice, and comfort in every bite.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm animate-on-scroll stagger-2">
+                        <img src="images/puranpoli.jpg" class="card-img-top img-fluid" alt="Puran Poli" style="height: 400px; object-fit: cover;">
+                        <div class="card-body text-center">
+                            <h3 class="h5 fw-bold">Puran Poli</h3>
+                            <p class="card-text">Sweet flatbread stuffed with lentils and jaggery.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mx-auto">
+                    <div class="card h-100 border-0 shadow-sm animate-on-scroll stagger-3">
+                        <img src="images/Shev-Bhaji.jpg" class="card-img-top img-fluid" alt="Vada Pav" style="height: 400px; object-fit: cover;">
+                        <div class="card-body text-center">
+                            <h3 class="h5 fw-bold">Shev Bhaji</h3>
+                            <p class="card-text">Tender potatoes simmered in a fiery, tangy gravy, crowned with a shower of crisp golden sev that soaks up the spice with every crunchy bite. Pure comfort, heat, and texture in one irresistible bowl.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-preview py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="about-text animate-on-scroll">
+                        <h2 class="mb-4">Our Story</h2>
+                        <p class="mb-4">In 2010, in the lively lanes of Pune's Rasta Peth, Siddhu opened Siddhu's Maharashtrian Thali with one clear mission: to serve the most authentic Maharashtrian thali in the city. Drawing from his mother and grandmother's treasured recipes, he brought to every steel plate the true taste of home — smoky pithla with crisp bhakri, fiery thecha, comforting varan-bhaat, and the indulgent sweetness of puran poli with sajuk tup.</p>
+                        <p class="mb-4">The thali quickly became our signature, loved for its generous portions, perfect balance of flavours, and the feeling of a complete, heartfelt Maharashtrian meal. Over the years, we've grown with Pune's families and students, staying true to fresh, daily-ground masalas and traditional cooking.</p>
+                        <p class="mb-4">Besides our beloved thalis, we also run a popular monthly mess service, delivering wholesome, home-style food to hostels and working professionals who crave ghar ka khana without the hassle. Fifteen years on, whether you join us for a quick thali or sign up for our mess, you're always family. Anna hava? Come, taste Maharashtra's warmth on every plate.</p>
+                        <a href="about.html" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-image animate-on-scroll stagger-1">
+                        <img src="images/restaurant-interior.jpg" alt="Our Restaurant" class="img-fluid rounded shadow">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container px-0 px-md-3">
+            <div class="section-title">
+                <h2 class="animate-on-scroll">What Our Customers Say</h2>
+                <p class="animate-on-scroll stagger-1">Real stories from people who love our food</p>
+            </div>
+            <div class="testimonial-grid">
+                <article class="testimonial-card animate-on-scroll stagger-4">
+                    <div class="testimonial-stars" aria-hidden="true">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <blockquote class="testimonial-quote">There is variety of options to choose from. I've been a regular customer, because this place provides good relatively healthy options for bachlor like me. Puran Poli is best to have on times.</blockquote>
+                    <div class="testimonial-author">
+                        <span class="testimonial-avatar" aria-hidden="true">P</span>
+                        <div>
+                            <strong>Pankaj Gaikwad</strong>
+                            <span class="testimonial-meta">Pune · Regular customer</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="testimonial-card animate-on-scroll stagger-5">
+                    <div class="testimonial-stars" aria-hidden="true">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <blockquote class="testimonial-quote">The menu of this restaurant has a unique taste. Come here if you are interested in eating something spicy and sweet combination. The naan and kulcha includes sooji and not maida. It is also famous for thali. Service is also great.</blockquote>
+                    <div class="testimonial-author">
+                        <span class="testimonial-avatar" aria-hidden="true">C</span>
+                        <div>
+                            <strong>Chinmay PARDESHI</strong>
+                            <span class="testimonial-meta">Pune Critic</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="testimonial-card animate-on-scroll stagger-6">
+                    <div class="testimonial-stars" aria-hidden="true">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <blockquote class="testimonial-quote">I took a regular Maharashtrian thali 130/- and it was unexpectedly very tasty and good. It had Pithla, Shev bhaji (sunday special) and bharla vanga. All veggies were very tasty. Thali also had sweet shira, daal and curd. Along with thecha and shegdana chatni. Rice, Chapati/bhakri and salad and papad. It was a very good experience. Highly recommended if looking for maharashtrian thali at reasonable price.</blockquote>
+                    <div class="testimonial-author">
+                        <span class="testimonial-avatar" aria-hidden="true">C. T</span>
+                        <div>
+                            <strong>Chaitanya Tallam</strong>
+                            <span class="testimonial-meta">Pune · Family favorite</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5 mt-auto">
+        <div class="container px-0 px-md-3">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Maharashtrian Thali</h3>
+                    <p>Experience the authentic taste of Maharashtra with our traditional recipes and warm hospitality.</p>
+                    <div class="social-links">
+                        <a href="https://www.zomato.com/pune/siddu-maharashtrian-thali-rasta-peth" aria-label="Zomato"><img src="images/zomato.svg" alt="Zomato"></a>
+                        <a href="https://www.swiggy.com/city/pune/maharashtrian-thali-rasta-peth-rest315612" aria-label="Swiggy"><img src="images/swiggy.png" alt="Swiggy"></a>
+                        <a href="https://www.instagram.com/_maharashtrian_thali_siddhu_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Instagram"><img src="images/instagram.png" alt="Instagram"></a>
+                        <div class = "facebook-css">
+                            <a href="https://www.facebook.com/profile.php?id=61580928208877" aria-label="Facebook"><img src="images/facebook.png" alt="Facebook"></a>
+                        </div>                    
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="menu.html">Menu</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> GV98+G76, Rasta Peth, Pune, Maharashtra 411002</p>
+                    <p><i class="fas fa-phone"></i>+91 86001 55129</p>
+                    <p><i class="fas fa-envelope"></i> Maharashtrianthali@gmail.com</p>
+                </div>
+                <div class="footer-column">
+                    
+                    <h3>Opening Hours</h3>
+                    <p>Monday - Friday: 11:00 AM - 01:00 AM</p>
+                    <p>Saturday - Sunday: 11:00 AM - 12:00 PM</p>
+                    
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Maharashtrian Thali. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

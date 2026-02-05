@@ -1,0 +1,2013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Our Menu | Maharashtrian Thali</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        html, body, .page-wrapper {
+            width: 100%;
+            min-height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            -webkit-text-size-adjust: 100%;
+            -webkit-overflow-scrolling: touch;
+            width: 100%;
+        }
+        
+        .page-wrapper {
+            flex: 1 0 auto;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        footer {
+            background: #222;
+            color: #fff;
+            padding: 40px 0 0;
+            margin-top: auto;
+            width: 100%;
+            flex-shrink: 0;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+.footer-column {
+    flex: 1 1 250px;
+    min-width: 200px;
+}
+
+/* Remove fixed width from .foot */
+.foot {
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+        
+        .container {
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+         .social-links {
+            display: flex;
+            margin-top: 30px;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #f8f0e5;
+            color: #e67e22;
+            border-radius: 50%;
+            font-size: 18px;
+            
+        }
+
+        .facebook-css a img{
+            width:80px;
+            height:80px;
+        }
+        
+        .menu-tabs {
+            position: fixed; /* ← This is the key change */
+            top: 100px; /* Adjust if needed — measure your header height (~98px logo + padding) */
+            left: 0;
+            right: 0;
+            background: #fff; /* Or #f9f9f9 if you prefer the lighter look */
+            z-index: 900;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 10px 0;
+            width: 100%;
+        }
+
+        .tabs-scroll-container {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 8px;
+        }
+
+        /* Keep your nice thin/hidden scrollbar styles */
+        .tabs-scroll-container::-webkit-scrollbar {
+            height: 6px;
+        }
+        .tabs-scroll-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        .tabs-scroll-container::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+        .tabs-scroll-container::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        .tabs-scroll-container {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: thin;  /* Firefox */
+        }
+        
+        .tabs-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .tab-btn {
+            background: none;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 8px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .tab-btn:hover, .tab-btn.active {
+            background: var(--primary-color);
+            color: #fff;
+        }
+        
+        .menu-section {
+            padding-top: 160px;
+        }
+        
+        .menu-category {
+            margin-bottom: 60px;
+        }
+        
+        .menu-category h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .menu-category h2:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: var(--primary-color);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .category-image {
+            width: 100%;
+            max-width: 500px;
+            height: 400px;
+            margin: 0 auto 40px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center ;
+        }
+        
+        .menu-item {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            display: flex;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        
+        .menu-item-image {
+            width: 120px;
+            height: 120px;
+            flex-shrink: 0;
+        }
+        
+        .menu-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .menu-item-content {
+            padding: 15px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .menu-item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .menu-item-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .menu-item-price {
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        
+        .menu-item-desc {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .menu-item-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .menu-item-rating {
+            color: #ffc107;
+            font-size: 0.9rem;
+        }
+        
+        .add-to-cart {
+            background: var(--primary-color);
+            color: #fff;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.3s ease;
+        }
+        
+        .add-to-cart:hover {
+            background: #d62c1a;
+        }
+        
+        .veg-nonveg {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            margin-right: 5px;
+            display: inline-block;
+            position: relative;
+        }
+        
+        .veg {
+            background: #4caf50;
+        }
+        
+        .non-veg {
+            background: #f44336;
+        }
+        
+        .veg:before, .non-veg:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #fff;
+        }
+
+        .foot{
+            width: 400px;
+        }
+        
+        @media (max-width: 768px) {
+            html, body, .page-wrapper {
+                width: 100% !important;
+                max-width: 100% !important;
+                overflow-x: hidden;
+                position: relative;
+            }
+            
+            .container {
+                padding: 0 15px;
+                width: 100%;
+                max-width: 100%;
+            }
+            
+            .menu-grid {
+                grid-template-columns: 1fr !important;
+            }
+            
+            .menu-category {
+                padding: 15px !important;
+            }
+            .menu-grid {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+            }
+            .menu-tabs {
+                top: 85px; /* Mobile header is shorter (~76-85px) */
+            }
+            .menu-section {
+                padding-top: 140px;
+            }
+            
+        }
+        
+        @media (max-width: 992px) {
+            .menu-grid {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+            }
+            
+            .category-image {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <!-- Header -->
+    <header>
+        <div class="container px-0 px-md-3">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="Maharashtrian Thali" class="logo-img">
+                </a>
+                
+                <!-- Mobile menu toggle with Font Awesome icons -->
+                <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-checkbox">
+                <label for="mobile-menu-toggle" class="mobile-menu-icon">
+                    <i class="fas fa-bars"></i>
+                    <i class="fas fa-times"></i>
+                </label>
+                
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="menu.html" class="active">Menu</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="images/restaurant-interior.jpg" alt="Restaurant Menu" class="hero-img">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Our Menu</h1>
+            <p>Authentic flavors made with love</p>
+            <button class="tab-btn active" data-category="Maharashtrian Thali">Scroll Down to see menu</button>
+
+        </div>
+    </section>
+
+    <!-- Menu Tabs -->
+    <section class="menu-tabs">
+        <div class="container px-0 px-md-3">
+            <div class="tabs-scroll-container">
+                <div class="tabs-wrapper">
+                    <button class="tab-btn active" data-category="Maharashtrian Thali">Maharashtrian Thali</button>
+                    <button class="tab-btn" data-category="Paneer Special">Paneer Special</button>
+                    <button class="tab-btn" data-category="Punjabi Special Bhaji">Punjabi Special Bhaji</button>
+                    <button class="tab-btn" data-category="Maharashtrian Bhaji">Maharashtrian Bhaji</button>
+                    <button class="tab-btn" data-category="Kaju Special">Kaju Special</button>
+                    <button class="tab-btn" data-category="Starter">Starter</button>
+                    <button class="tab-btn" data-category="Dal Special">Dal Special</button>
+                    <button class="tab-btn" data-category="Rice Special">Rice Special</button>
+                    <button class="tab-btn" data-category="Extra">Extra</button>
+                    <button class="tab-btn" data-category="Veg Special">Veg Special</button>
+                    <button class="tab-btn" data-category="Maharashtrian Poli">Maharashtrian Poli</button>
+                    <button class="tab-btn" data-category="Roti Special">Roti Special</button>
+                    <button class="tab-btn" data-category="Cold drinks">Cold Drinks</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section">
+        <div class="container px-0 px-md-3">
+
+            <!-- Thali Section -->
+            <div class="menu-category" id="Maharashtrian Thali">
+                <h2>Maharashtrian Thali</h2>
+                <div class="category-image">
+                    <img src="images/thali.png" alt="Maharashtrian Thali">
+                </div>
+                <div class="menu-grid">
+                    <!-- Item 1 -->
+                    <div class="menu-item">
+                        
+                        <div class="menu-item-content">
+                            <div>
+                                <div class="menu-item-header">
+                                    <h3 class="menu-item-title">Maharashtrian Thali</h3>
+                                    <span class="menu-item-price">₹199</span>
+                                    </div>
+                                <p class="menu-item-desc">A complete meal with 3 chapati/ 2 Bhakari, 3 Bhaji, Sada Varan, Rice, Achar, Thecha, Shenga Chatni, Papad, Dhai Wati.</p>
+                            </div>
+                            <div class="menu-item-footer">
+                                <div class="menu-item-rating">
+                                    <i class="fas fa-star"></i> 4.8
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Special Maharashtrian Thali</h3>
+                                <span class="menu-item-price">₹249</span>
+                            </div>
+                            <p class="menu-item-desc">A complete meal with 3 chapati/ 2 Bhakari, 1 Paneer Bhaji + 2 Bhaji, Varan, Jeera Rice, Dahi, Achar, Thecha, Shenga Chatni, Papad.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Punjabi Thali</h3>
+                                <span class="menu-item-price">₹299</span>
+                            </div>
+                            <p class="menu-item-desc">A complete meal with 3 Butter Chapati/ 2 Butter Bhakari/ 2 Butter Roti, Mix Veg, Paneer Masala, Rassa Bhaji, Dry Bhaji, Dal Tadka, Kadhi, Jeera Rice, Aam Ras, Gulab Jamun, Dahi, Achar, Thecha, Shenga Chatni, Papad</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Sajuk Tupatil Puranpoli Thali</h3>
+                                <span class="menu-item-price">₹279</span>
+                            </div>
+                            <p class="menu-item-desc">A complete meal with 2 Puranpoli, Mango Cup, Milk Cup, Kanda Bhaji, Papad, Suka Jeera Aloo, Katachi Amati, 2 Chapati, Rice, Waran. </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 5 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Sunday Special Thali</h3>
+                                <span class="menu-item-price">₹269</span>
+                            </div>
+                            <p class="menu-item-desc"> </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 6 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Pithla Bhakari</h3>
+                                <span class="menu-item-price">₹99</span>
+                            </div>
+                            <p class="menu-item-desc"> Pithla Bhakari </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 7 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Chapati Bhaji</h3>
+                                <span class="menu-item-price">₹89</span>
+                            </div>
+                            <p class="menu-item-desc"> Chapati Bhaji </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 8 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Dal Rice</h3>
+                                <span class="menu-item-price">₹79</span>
+                            </div>
+                            <p class="menu-item-desc"> Dal Rice </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Paneer Special Section -->
+            <div class="menu-category" id="Paneer Special">
+                <h2>Paneer Special</h2>
+                <div class="category-image">
+                    <img src="images/paneer.jpg" alt="Maharashtrian Thali" height = 250px>
+                </div>
+                <div class="menu-grid">
+                    <!-- Item 1 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Paneer Butter Masala</h3>
+                                <span class="menu-item-price">₹229</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Paneer Tikka Masala</h3>
+                                <span class="menu-item-price">₹239</span>
+                            </div>
+                         
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Paneer Kadhai</h3>
+                                <span class="menu-item-price">₹219</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Paneer Chingari</h3>
+                                <span class="menu-item-price">₹249</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Palak Paneer</h3>
+                                <span class="menu-item-price">₹199</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Item 6 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Paneer Mutter Masala</h3>
+                                <span class="menu-item-price">₹219</span>
+                            </div>
+                          
+                        </div>
+                    </div>
+
+                    <!-- Item 7 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Paneer Maharaja</h3>
+                                <span class="menu-item-price">₹259</span>
+                            </div>
+                         
+                        </div>
+                    </div>
+
+                    <!-- Item 8 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Paneer Lasani</h3>
+                                <span class="menu-item-price">₹229</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <!-- Item 9 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Paneer Masala</h3>
+                                <span class="menu-item-price">₹199</span>
+                            </div>
+                      
+                        </div>
+                    </div>
+
+                    <!-- Item 10 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Paneer Kaju Masala</h3>
+                                <span class="menu-item-price">₹269</span>
+                            </div>
+                        
+                        </div>
+                    </div>
+
+                    <!-- Item 11 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Paneer Handi</h3>
+                                <span class="menu-item-price">₹239</span>
+                            </div>
+                        
+                        </div>
+                    </div>
+
+                    <!-- Item 12 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Paneer Kofta</h3>
+                                <span class="menu-item-price">₹249</span>
+                            </div>
+                         
+                        </div>
+                    </div>
+
+                    <!-- Item 13 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Paneer 65 Masala</h3>
+                                <span class="menu-item-price">₹249</span>
+                            </div>
+                        
+                        </div>
+                    </div>
+
+                    <!-- Item 14 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Paneer Angara</h3>
+                                <span class="menu-item-price">₹259</span>
+                            </div>
+                         
+                        </div>
+                    </div>
+
+                    <!-- Item 15 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Dal Rice</h3>
+                                <span class="menu-item-price">₹79</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Punjabi Special Bhaji Section -->
+            <div class="menu-category" id="Punjabi Special Bhaji">
+                <h2>Punjabi Special Bhaji</h2>
+                <div class="category-image">
+                    <img src="images/punjabi.jpg" alt="Maharashtrian Thali">
+                </div>
+                <div class="menu-grid">
+
+                    <!-- Item 1 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Siddhu's Special Bhaji</h3>
+                                <span class="menu-item-price">₹199</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Paneer Mumtaz</h3>
+                                <span class="menu-item-price">₹229</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    
+                    <!-- Item 3 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Paneer Kurma</h3>
+                                <span class="menu-item-price">₹219</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    
+                    <!-- Item 4 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Veg Kurma</h3>
+                                <span class="menu-item-price">₹179</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    
+                    <!-- Item 5 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Paneer Ghunguru</h3>
+                                <span class="menu-item-price">₹209</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    
+                    <!-- Item 6 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Paneer Bhurji</h3>
+                                <span class="menu-item-price">₹189</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+
+            <!-- Maharashtrian Bhaji Section -->
+            <div class="menu-category" id="Maharashtrian Bhaji">
+                <h2>Maharashtrian Bhaji</h2>
+                <div class="category-image">
+                    <img src="images/Shev-Bhaji.jpg" alt="Maharashtrian Thali">
+                </div>
+                <div class="menu-grid">
+
+                    <!-- Item 1 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Matki Rassa</h3>
+                                <span class="menu-item-price">₹129</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Matki SUkha</h3>
+                                <span class="menu-item-price">₹119</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    
+                    <!-- Item 3 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Pithla</h3>
+                                <span class="menu-item-price">₹99</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    
+                    <!-- Item 4 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Baigan Masala</h3>
+                                <span class="menu-item-price">₹119</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    
+                    <!-- Item 5 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Shev Bhaji</h3>
+                                <span class="menu-item-price">₹139</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    
+                    <!-- Item 6 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Akhha Masur</h3>
+                                <span class="menu-item-price">₹129</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    
+                    <!-- Item 7 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Chole Masala</h3>
+                                <span class="menu-item-price">₹129</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    
+                    <!-- Item 8 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Chavli Masala</h3>
+                                <span class="menu-item-price">₹129</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    
+                    <!-- Item 9 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Aaloo Mutter</h3>
+                                <span class="menu-item-price">₹119</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    
+                    <!-- Item 10 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Dum Aaloo</h3>
+                                <span class="menu-item-price">₹139</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    
+                    <!-- Item 11 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Shenga Bhaji</h3>
+                                <span class="menu-item-price">₹149</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    
+                    <!-- Item 12 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Bhendi Masala</h3>
+                                <span class="menu-item-price">₹129</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    
+                    <!-- Item 13 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Bhendi Fry</h3>
+                                <span class="menu-item-price">₹119</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    
+                    <!-- Item 14 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Shimla Masala</h3>
+                                <span class="menu-item-price">₹139</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    
+                    <!-- Item 15 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Green Peas Masala</h3>
+                                <span class="menu-item-price">₹129</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    
+                    <!-- Item 16 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Alu Jeera</h3>
+                                <span class="menu-item-price">₹99</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    
+
+                </div>
+            </div>
+
+            <!-- Kaju Section -->
+            <div class="menu-category" id="Kaju Special">
+                <h2>Kaju Special</h2>
+                <div class="category-image">
+                    <img src="images/malai.jpg" alt="Maharashtrian Thali">
+                </div>
+                <div class="menu-grid">
+                    
+                    <!-- Item 1 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Kaju Kari</h3>
+                                <span class="menu-item-price">₹279</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Malai Kofta</h3>
+                                <span class="menu-item-price">₹259</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Kaju Masala</h3>
+                                <span class="menu-item-price">₹269</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Starter Section -->
+            <div class="menu-category" id="Starter">
+                <h2>Starter</h2>
+                <div class="category-image">
+                    <img src="images/paneer65.jpg" alt="Maharashtrian Thali">
+                </div>
+                <div class="menu-grid">
+
+                    <!-- Item 1 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Paneer Chilli</h3>
+                                <span class="menu-item-price">₹189</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Paneer 65</h3>
+                                <span class="menu-item-price">₹199</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Gobi 65</h3>
+                                <span class="menu-item-price">₹159</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Veg Pakoda</h3>
+                                <span class="menu-item-price">₹99</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Paneer Pakoda</h3>
+                                <span class="menu-item-price">₹149</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <!-- Item 6 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Finger Chips</h3>
+                                <span class="menu-item-price">₹79</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <!-- Item 7 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Masala Papad</h3>
+                                <span class="menu-item-price">₹30</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <!-- Item 8 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Fry Papad</h3>
+                                <span class="menu-item-price">₹25</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <!-- Item 9 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Roasted Papad</h3>
+                                <span class="menu-item-price">₹20</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- Dal Special Section -->
+            <div class="menu-category" id="Dal Special">
+                <h2>Dal Specials</h2>
+                <div class="category-image">
+                    <img src="images/dal.jpg" alt="Maharashtrian Thali">
+                </div>
+                <div class="menu-grid">
+                    
+                    <!-- Item 1 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Dal Fry</h3>
+                                <span class="menu-item-price">₹99</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Dal Tadka</h3>
+                                <span class="menu-item-price">₹109</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    
+                    <!-- Item 3 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Dal Kolhapuri</h3>
+                                <span class="menu-item-price">₹129</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rice Special Section -->
+            <div class="menu-category" id="Rice Special">
+                <h2>Rice Special</h2>
+                <div class="category-image">
+                    <img src="images/biryani.jpg" alt="Maharashtrian Thali">
+                </div>
+                <div class="menu-grid">
+
+                    <!-- Item 1 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Plain Rice</h3>
+                                <span class="menu-item-price">₹79</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Jeera Rice</h3>
+                                <span class="menu-item-price">₹89</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Masala Rice</h3>
+                                <span class="menu-item-price">₹99</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Veg Pulav</h3>
+                                <span class="menu-item-price">₹129</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <!-- Item 5 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Paneer Pulav</h3>
+                                <span class="menu-item-price">₹149</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <!-- Item 6 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Curd Rice</h3>
+                                <span class="menu-item-price">₹89</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <!-- Item 7 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Veg Biryani</h3>
+                                <span class="menu-item-price">₹169</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <!-- Item 8 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Paneer Biryani</h3>
+                                <span class="menu-item-price">₹189</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <!-- Item 9 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Dal Khichdi</h3>
+                                <span class="menu-item-price">₹99</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <!-- Item 10 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Paneer Tikka Biryani</h3>
+                                <span class="menu-item-price">₹209</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <!-- Item 11 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Kaju Pulav</h3>
+                                <span class="menu-item-price">₹199</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <!-- Item 12 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Paneer Kaju Pulav</h3>
+                                <span class="menu-item-price">₹219</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    
+
+                </div>
+            </div>
+
+            <!-- Extra Section -->
+            <div class="menu-category" id="Extra">
+                <h2>Extras</h2>
+                <div class="category-image">
+                    <img src="images/extra.jpg" alt="Maharashtrian Thali">
+                </div>
+                <div class="menu-grid">
+
+                    <!-- Item 1 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Thecha</h3>
+                                <span class="menu-item-price">₹30</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Shenga Chatni</h3>
+                                <span class="menu-item-price">₹35</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Dahi</h3>
+                                <span class="menu-item-price">₹40</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Gulab Jamun Single</h3>
+                                <span class="menu-item-price">₹40</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <!-- Item 5 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Gulab Jamun Double</h3>
+                                <span class="menu-item-price">₹70</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <!-- Item 6 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Fryams</h3>
+                                <span class="menu-item-price">₹50</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <!-- Item 7 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Waran 1 Vati</h3>
+                                <span class="menu-item-price">₹25</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <!-- Item 8 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Bhaji 1 Vati</h3>
+                                <span class="menu-item-price">₹35</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <!-- Item 9 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Rice 1 Vati</h3>
+                                <span class="menu-item-price">₹25</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <!-- Veg Special Section -->
+            <div class="menu-category" id="Veg Special">
+                <h2>Veg Special</h2>
+                <div class="category-image">
+                    <img src="images/veg.jpg" alt="Maharashtrian Thali">
+                </div>
+                <div class="menu-grid">
+
+                    <!-- Item 1 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Veg Mix</h3>
+                                <span class="menu-item-price">₹169</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Veg Kolhapuri</h3>
+                                <span class="menu-item-price">₹179</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Veg Maharaja</h3>
+                                <span class="menu-item-price">₹199</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Veg Patiyala</h3>
+                                <span class="menu-item-price">₹189</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Veg Maratha</h3>
+                                <span class="menu-item-price">₹179</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <!-- Item 6 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Veg Handi</h3>
+                                <span class="menu-item-price">₹189</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <!-- Item 7 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Veg Kadhai</h3>
+                                <span class="menu-item-price">₹179</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <!-- Item 8 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Veg Kofta</h3>
+                                <span class="menu-item-price">₹199</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <!-- Item 9 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Mushroom Masala</h3>
+                                <span class="menu-item-price">₹189</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+
+            <!-- Maharashtrian Poli Section -->
+            <div class="menu-category" id="Maharashtrian Poli">
+                <h2>Maharashtrian Poli</h2>
+                <div class="category-image">
+                    <img src="images/pur.jpg" alt="Maharashtrian Thali">
+                </div>
+                <div class="menu-grid">
+
+                     <!-- Item 1 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Puran Poli</h3>
+                                <span class="menu-item-price">₹60</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                     <!-- Item 2 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Shengdana Poli</h3>
+                                <span class="menu-item-price">₹55</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Roti Special Section -->
+            <div class="menu-category" id="Roti Special">
+                <h2>Roti Specials</h2>
+                <div class="category-image">
+                    <img src="images/naan.png" alt="Maharashtrian Thali">
+                </div>
+                <div class="menu-grid">
+
+                     <!-- Item 1 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Chapati</h3>
+                                <span class="menu-item-price">₹15</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                     <!-- Item 2 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Butter Chapati</h3>
+                                <span class="menu-item-price">₹25</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                     <!-- Item 3 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Bhakri</h3>
+                                <span class="menu-item-price">₹20</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                     <!-- Item 4 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Kadak Bhakri</h3>
+                                <span class="menu-item-price">₹25</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                     <!-- Item 5 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Tandoori Roti</h3>
+                                <span class="menu-item-price">₹25</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                     <!-- Item 6 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Butter Roti</h3>
+                                <span class="menu-item-price">₹35</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                     <!-- Item 7 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Nan</h3>
+                                <span class="menu-item-price">₹40</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                     <!-- Item 8 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Butter Nan</h3>
+                                <span class="menu-item-price">₹50</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                     <!-- Item 9 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Garlic Nan</h3>
+                                <span class="menu-item-price">₹55</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                     <!-- Item 10 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Garlic Butter Nan</h3>
+                                <span class="menu-item-price">₹60</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                     <!-- Item 11 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Cheese Garlic Nan</h3>
+                                <span class="menu-item-price">₹80</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                     <!-- Item 12 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Aloo Paratha</h3>
+                                <span class="menu-item-price">₹60</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                     <!-- Item 13 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Mix Veg Paratha</h3>
+                                <span class="menu-item-price">₹70</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                     <!-- Item 14 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Paneer Paratha</h3>
+                                <span class="menu-item-price">₹90</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                     <!-- Item 15 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Kulcha</h3>
+                                <span class="menu-item-price">₹45</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                     <!-- Item 16 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Butter Kulcha</h3>
+                                <span class="menu-item-price">₹55</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                     <!-- Item 17 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Butter Bhakri</h3>
+                                <span class="menu-item-price">₹35</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                     <!-- Item 18 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Ghee Chapati</h3>
+                                <span class="menu-item-price">₹30</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Cold Drinks Section -->
+            <div class="menu-category" id="Cold drinks">
+                <h2>Cold drinks</h2>
+                <div class="category-image">
+                    <img src="images/cold.jpg" alt="Maharashtrian Thali">
+                </div>
+                <div class="menu-grid">
+                    
+                    <!-- Item 1 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Butter Milk</h3>
+                                <span class="menu-item-price">₹40</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Masala Butter Milk</h3>
+                                <span class="menu-item-price">₹45</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Fresh Lime Water</h3>
+                                <span class="menu-item-price">₹35</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Solkadhi</h3>
+                                <span class="menu-item-price">₹50</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Water Bottle</h3>
+                                <span class="menu-item-price">₹20</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+            </div>
+
+            
+            <!-- Add more categories with similar structure -->
+            
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container px-0 px-md-3">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Maharashtrian Thali</h3>
+                    <p>Experience the authentic taste of Maharashtra with our traditional recipes and warm hospitality.</p>
+                    <div class="social-links">
+                        <a href="https://www.zomato.com/pune/siddu-maharashtrian-thali-rasta-peth" aria-label="Zomato"><img src="images/zomato.svg" alt="Zomato"></a>
+                        <a href="https://www.swiggy.com/city/pune/maharashtrian-thali-rasta-peth-rest315612" aria-label="Swiggy"><img src="images/swiggy.png" alt="Swiggy"></a>
+                        <a href="https://www.instagram.com/_maharashtrian_thali_siddhu_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Instagram"><img src="images/instagram.png" alt="Instagram"></a>
+                        <div class = "facebook-css">
+                            <a href="https://www.facebook.com/profile.php?id=61580928208877" aria-label="Facebook"><img src="images/facebook.png" alt="Facebook"></a>
+                        </div>                    
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="menu.html">Menu</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> GV98+G76, Rasta Peth, Pune, Maharashtra 411002</p>
+                    <p><i class="fas fa-phone"></i>+91 86001 55129</p>
+                    <p><i class="fas fa-envelope"></i> Maharashtrianthali@gmail.com</p>
+                </div>
+                <div class="footer-column">
+                    
+                    <h3>Opening Hours</h3>
+                    <p>Monday - Friday: 11:00 AM - 01:00 AM</p>
+                    <p>Saturday - Sunday: 11:00 AM - 12:00 PM</p>
+                    
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Maharashtrian Thali. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const menuCategories = document.querySelectorAll('.menu-category');
+            const tabsContainer = document.querySelector('.tabs-scroll-container');
+            let isScrolling = false;
+            let scrollTimeout;
+
+            // Function to update active tab based on scroll position
+            function updateActiveTab() {
+                if (isScrolling) return;
+                
+                const scrollPosition = window.scrollY + 200; // Adjust offset as needed
+                
+                menuCategories.forEach(category => {
+                    const categoryTop = category.offsetTop;
+                    const categoryHeight = category.offsetHeight;
+                    
+                    if (scrollPosition >= categoryTop && scrollPosition < (categoryTop + categoryHeight)) {
+                        const categoryId = category.getAttribute('id');
+                        const correspondingBtn = document.querySelector(`.tab-btn[data-category="${categoryId}"]`);
+                        
+                        if (correspondingBtn && !correspondingBtn.classList.contains('active')) {
+                            // Remove active class from all buttons
+                            tabBtns.forEach(btn => btn.classList.remove('active'));
+                            // Add active class to current button
+                            correspondingBtn.classList.add('active');
+                            
+                            // Scroll the tab into view if it's not fully visible
+                            const containerRect = tabsContainer.getBoundingClientRect();
+                            const btnRect = correspondingBtn.getBoundingClientRect();
+                            
+                            if (btnRect.right > containerRect.right) {
+                                // Button is off-screen to the right
+                                tabsContainer.scrollLeft += (btnRect.right - containerRect.right) + 20;
+                            } else if (btnRect.left < containerRect.left) {
+                                // Button is off-screen to the left
+                                tabsContainer.scrollLeft -= (containerRect.left - btnRect.left) + 20;
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Click handler for tab buttons
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const categoryId = this.getAttribute('data-category');
+                    const targetCategory = document.getElementById(categoryId);
+                    
+                    if (targetCategory) {
+                        isScrolling = true;
+                        
+                        // Update active class
+                        tabBtns.forEach(b => b.classList.remove('active'));
+                        this.classList.add('active');
+                        
+                        // Smooth scroll to the category
+                        window.scrollTo({
+                            top: targetCategory.offsetTop - 100, // Adjust offset as needed
+                            behavior: 'smooth'
+                        });
+                        
+                        // Reset scrolling flag after scroll is complete
+                        clearTimeout(scrollTimeout);
+                        scrollTimeout = setTimeout(() => {
+                            isScrolling = false;
+                        }, 1000);
+                    }
+                });
+            });
+            
+            // Add scroll event listener for updating active tab
+            window.addEventListener('scroll', () => {
+                if (!isScrolling) {
+                    updateActiveTab();
+                }
+            });
+            
+            // Initial update of active tab
+            updateActiveTab();
+            
+            // Add to cart functionality
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const menuItem = this.closest('.menu-item');
+                    const itemName = menuItem.querySelector('.menu-item-title').textContent;
+                    const itemPrice = menuItem.querySelector('.menu-item-price').textContent;
+                    
+                    // Show success message
+                    const originalText = this.textContent;
+                    this.textContent = 'Added!';
+                    this.style.backgroundColor = '#4CAF50';
+                    
+                    // Reset button after 2 seconds
+                    setTimeout(() => {
+                        this.textContent = originalText;
+                        this.style.backgroundColor = '';
+                    }, 2000);
+                    
+                    // Here you would typically add the item to a shopping cart
+                    console.log(`Added to cart: ${itemName} - ${itemPrice}`);
+                });
+            });
+        });
+    </script>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

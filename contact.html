@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Contact Us | Maharashtrian Thali</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        html, body, .page-wrapper {
+            width: 100%;
+            min-height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            -webkit-text-size-adjust: 100%;
+            -webkit-overflow-scrolling: touch;
+            width: 100%;
+        }
+        
+        .page-wrapper {
+            flex: 1 0 auto;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        footer {
+            background: #222;
+            color: #fff;
+            padding: 40px 0 0;
+            margin-top: auto;
+            width: 100%;
+            flex-shrink: 0;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+.footer-column {
+    flex: 1 1 250px;
+    min-width: 200px;
+}
+
+/* Remove fixed width from .foot */
+.foot {
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+        
+        .container {
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        
+        /* Google Map Container */
+        .map-container {
+            width: 100%;
+            height: 400px;
+            margin-top: 50px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .facebook-css a img {
+            width: 80px;
+            height: 80px;
+        }
+        
+        /* Social Icons Styling */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-3px);
+        }
+        
+        .social-links img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover img {
+            transform: scale(1.1);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/contact-bg.jpg') no-repeat center center/cover;
+        }
+        .contact-section {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: #e67e22;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: #e67e22;
+            box-shadow: 0 0 0 0.2rem rgba(230, 126, 34, 0.25);
+            outline: none;
+        }
+
+        .foot{
+            width: 400px;
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #e67e22;
+            color: #fff;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: #d35400;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: fit-content;
+        }
+
+        .info-item {
+            display: flex;
+            margin-bottom: 30px;
+            align-items: flex-start;
+        }
+
+        .info-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #f8f0e5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: #e67e22;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .info-content h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .info-content p, .info-content a {
+            color: #666;
+            line-height: 1.6;
+            margin: 0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .info-content a:hover {
+            color: #e67e22;
+        }
+
+        .social-links {
+            display: flex;
+            margin-top: 30px;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #f8f0e5;
+            color: #e67e22;
+            border-radius: 50%;
+            font-size: 18px;
+            
+        }
+
+        @media (max-width: 991px) {
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            .contact-info {
+                flex: 1;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            html, body, .page-wrapper {
+                width: 100% !important;
+                max-width: 100% !important;
+                overflow-x: hidden;
+                position: relative;
+            }
+            
+            .container {
+                padding: 0 15px;
+                width: 100%;
+                max-width: 100%;
+            }
+            .contact-form,
+            .contact-info {
+                padding: 25px;
+            }
+            
+            .info-item {
+                flex-direction: column;
+            }
+            
+            .info-icon {
+                margin-bottom: 15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .contact-form,
+            .contact-info {
+                padding: 25px;
+            }
+            
+            .info-item {
+                flex-direction: column;
+            }
+            
+            .info-icon {
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <!-- Header -->
+    <header>
+        <div class="container px-0 px-md-3">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="Maharashtrian Thali" class="logo-img">
+                </a>
+                
+                <!-- Mobile menu toggle with Font Awesome icons -->
+                <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-checkbox">
+                <label for="mobile-menu-toggle" class="mobile-menu-icon">
+                    <i class="fas fa-bars"></i>
+                    <i class="fas fa-times"></i>
+                </label>
+                
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html" class="active">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero position-relative overflow-hidden">
+        <img src="images/restaurant-interior.jpg" alt="Contact Us" class="hero-img position-absolute top-0 start-0 w-100 h-100">
+        <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100"></div>
+        <div class="hero-content position-relative z-index-1 text-center text-white p-4">
+            <div class="container">
+                <h1 class="display-4 fw-bold mb-3">Contact Us</h1>
+                <p class="lead">We'd love to hear from you. Get in touch with us today!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="section-title text-center mb-5">
+                <h2 class="display-5 fw-bold mb-2">Get In Touch</h2>
+                <p class="lead">Have questions or feedback? We're here to help! Reach out to us using the form below or through our contact information.</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="contact-info bg-light p-4 p-lg-5 rounded-3">
+                        <h3 class="h4 fw-bold mb-4 text-center">Contact Information</h3>
+                        <p class="mb-5 text-center">Feel free to reach out to us through any of these channels:</p>
+                        
+                        <div class="contact-details">
+                            <div class="d-flex mb-4">
+                                <div class="me-4 text-primary">
+                                    <i class="fas fa-map-marker-alt fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h4 class="h6 fw-bold mb-1">Address</h4>
+                                    <p class="mb-0">GV98+G76, Rasta Peth, Pune, Maharashtra 411002</p>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex mb-4">
+                                <div class="me-4 text-primary">
+                                    <i class="fas fa-phone fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h4 class="h6 fw-bold mb-1">Phone</h4>
+                                    <p class="mb-0">+91 86001 55129</p>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex mb-4">
+                                <div class="me-4 text-primary">
+                                    <i class="fas fa-envelope fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h4 class="h6 fw-bold mb-1">Email</h4>
+                                    <p class="mb-0">Maharashtrianthali@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex mb-4">
+                                <div class="me-4 text-primary">
+                                    <i class="fas fa-clock fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h4 class="h6 fw-bold mb-1">Opening Hours</h4>
+                                    <p class="mb-0">Monday - Saturday: 11:00 AM - 11:00 PM<br>
+                                    Sunday: 11:00 AM - 10:30 PM</p>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-5 text-center">
+                                <h4 class="h6 fw-bold mb-4">Connect With Us</h4>
+                                <div class="social-links">
+                                    <div class = "facebook-css">
+                                    <a href="https://www.facebook.com/profile.php?id=61580928208877" target="_blank" aria-label="Facebook">
+                                        <img src="images/facebook.png" alt="Facebook">
+                                    </a>
+                                    </div>
+                                    <a href="https://www.instagram.com/_maharashtrian_thali_siddhu_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" aria-label="Instagram">
+                                        <img src="images/instagram.png" alt="Instagram">
+                                    </a>
+                                    <a href="https://www.zomato.com/pune/siddu-maharashtrian-thali-rasta-peth" target="_blank" aria-label="Zomato">
+                                        <img src="images/zomato.svg" alt="Zomato">
+                                    </a>
+                                    <a href="https://www.swiggy.com/city/pune/maharashtrian-thali-rasta-peth-rest315612" target="_blank" aria-label="Swiggy">
+                                        <img src="images/swiggy.png" alt="Swiggy">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            
+            <!-- Google Map -->
+            <div class="map-container" onclick="window.open('https://www.google.com/maps/place/Siddhu%27s+Maharashtrian+Thali/@18.5188564,73.8657094,17z/data=!4m6!3m5!1s0x3bc2c1006789db71:0xb469c4cce8ca6d21!8m2!3d18.5188087!4d73.8657152!16s%2Fg%2F11y4tfqsps?entry=ttu', '_blank')" style="cursor: pointer; position: relative;">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.330025621031!2d73.86312487436547!3d18.51885638257166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1006789db71%3A0xb469c4cce8ca6d21!2sSiddhu%27s%20Maharashtrian%20Thali!5e0!3m2!1sen!2sin!4v1699999999999!5m2!1sen!2sin"
+                    allowfullscreen="" 
+                    loading="lazy"
+                    style="width: 100%; height: 100%; border: 0;"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 10; cursor: pointer;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5 mt-auto">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Maharashtrian Thali</h3>
+                    <p>Experience the authentic taste of Maharashtra with our traditional recipes and warm hospitality.</p>
+                    <div class="social-links">
+                        <a href="https://www.zomato.com/pune/siddu-maharashtrian-thali-rasta-peth" aria-label="Zomato"><img src="images/zomato.svg" alt="Zomato"></a>
+                        <a href="https://www.swiggy.com/city/pune/maharashtrian-thali-rasta-peth-rest315612" aria-label="Swiggy"><img src="images/swiggy.png" alt="Swiggy"></a>
+                        <a href="https://www.instagram.com/_maharashtrian_thali_siddhu_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Instagram"><img src="images/instagram.png" alt="Instagram"></a>
+                        <div class = "facebook-css">
+                            <a href="https://www.facebook.com/profile.php?id=61580928208877" aria-label="Facebook"><img src="images/facebook.png" alt="Facebook"></a>
+                        </div>                   
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="menu.html">Menu</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> GV98+G76, Rasta Peth, Pune, Maharashtra 411002</p>
+                    <p><i class="fas fa-phone"></i> +91 86001 55129</p>
+                    <p><i class="fas fa-envelope"></i> Maharashtrianthali@gmail.com</p>
+                </div>
+                <div class="footer-column">
+                    
+                    <h3>Opening Hours</h3>
+                    <p>Monday - Friday: 11:00 AM - 01:00 AM</p>
+                    <p>Saturday - Sunday: 11:00 AM - 12:00 PM</p>
+                    
+                </div>
+
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Maharashtrian Thali. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
