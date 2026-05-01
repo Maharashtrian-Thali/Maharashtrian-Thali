@@ -147,9 +147,23 @@
         }
         
         .chef-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            width: 120%;
+            height: auto;
+            max-height: 400px;
+            object-fit: contain;
+            margin-left: -10%;
+            margin-right: -10%;
+        }
+        
+        @media (min-width: 768px) {
+            .chef-image img {
+                width: 100%;
+                max-width: 400px;
+                height: 400px;
+                object-fit: cover;
+                margin: 0 auto;
+                display: block;
+            }
         }
         
         .chef-info {
@@ -283,7 +297,7 @@
             <div class="chef-grid">
                 <div class="chef-card">
                     <div class="chef-image">
-                        <img src="images/chef-1.jpg" alt="Head Chef">
+                        <img src="images/chef-1.png" alt="Head Chef">
                     </div>
                     <div class="chef-info">
                         <h3>Siddhappa Hegde</h3>
@@ -291,18 +305,7 @@
                         <p>With over 20 years of experience in Food industry, specializing in business and taste management</p>
                     </div>
                 </div>
-                <div class="chef-card">
-                    <div class="chef-image">
-                        <img src="images/chef2.jpg" alt="Sous Chef">
-                    </div>
-                    <div class="chef-info">
-                        <h3>Samarth Hegde</h3>
-                        <p class="position">Co-Founder</p>
-                        <p>Specializing in traditional food.</p>
-                        
-                    </div>
-                </div>
-            </div>
+                            </div>
         </div>
     </section>
 
