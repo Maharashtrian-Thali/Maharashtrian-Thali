@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://maharashtrian-thali.github.io/Maharashtrian-Thali/sitemap.xml
+Sitemap: https://maharashtrian-thali.github.io/Maharashtrian-Thali/sitemap_index.xml

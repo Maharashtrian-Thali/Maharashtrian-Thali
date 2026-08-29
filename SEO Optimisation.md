@@ -511,3 +511,133 @@ Higher ranking
 * Actual Google ranking improvement
 
 **Most important:** The existing QR code URL has **not been changed**, so the QR-based menu remains safe.
+
+---
+
+# Daily Work Documentation
+
+## Date: 29 August 2026
+
+### Project: Maharashtrian Thali — Google Search Indexing & SEO
+
+### Objective
+Resolve the Google Search Console sitemap **“Couldn't fetch”** issue and make sure the Maharashtrian Thali GitHub Pages website is accessible and eligible for Google indexing.
+
+---
+
+## Work Completed Today
+
+### 1. Verified the Live Sitemap
+Verified that the sitemap is publicly accessible through GitHub Pages:
+
+`https://maharashtrian-thali.github.io/Maharashtrian-Thali/sitemap_index.xml`
+
+The sitemap successfully opened in the browser as XML.
+
+The sitemap contains the following website URLs:
+
+- Homepage
+- Menu
+- About
+- Gallery
+- Contact
+The sitemap uses the standard:
+
+`<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`
+
+structure.
+
+### 2. Verified GitHub Pages Deployment
+Checked GitHub Pages settings and confirmed:
+
+- Website is live.
+- HTTPS is enabled.
+- Website is deployed through GitHub Actions.
+- GitHub Pages deployment is working correctly.
+Live website:
+
+`https://maharashtrian-thali.github.io/Maharashtrian-Thali/`
+
+### 3. Fixed `robots.txt`
+The sitemap declaration in `robots.txt` was corrected.
+
+Final configuration:
+
+```text
+User-agent: *
+Allow: /
+
+Sitemap: https://maharashtrian-thali.github.io/Maharashtrian-Thali/sitemap_index.xml
+```
+This allows crawlers to access the website and provides Google with the sitemap location.
+
+### 4. Investigated Google Search Console Sitemap Error
+Google Search Console was showing:
+
+**Couldn't fetch**
+
+for the submitted sitemap.
+
+The sitemap was opened directly and confirmed to be accessible.
+
+The sitemap was also resubmitted in Google Search Console.
+
+The Search Console status may still display **Couldn't fetch**, but further GitHub changes were stopped because the live sitemap is accessible and Google can access the website.
+
+### 5. Tested Sitemap with Google URL Inspection
+Used Google Search Console's **URL Inspection → Test Live URL** on the sitemap.
+
+Result:
+
+**URL is available to Google**
+
+**Page can be indexed**
+
+This confirmed that Google can access the live sitemap URL.
+
+### 6. Tested All Website Pages
+Used Google Search Console's URL Inspection tool for all important website pages.
+
+For each page:
+
+1. Entered the URL.
+2. Selected **Test Live URL**.
+3. Confirmed that the page could be indexed.
+4. Selected **Request Indexing**.
+Pages tested:
+
+- Homepage
+- `menu.html`
+- `about.html`
+- `gallery.html`
+- `contact.html`
+All pages passed the live availability check and indexing requests were submitted.
+
+---
+
+## Final Status
+TaskStatusGitHub Pages website live✅ CompletedHTTPS enabled✅ CompletedSitemap publicly accessible✅ CompletedSitemap XML structure verified✅ Completed`robots.txt` verified/fixed✅ CompletedGoogle Live Test for sitemap✅ PassedHomepage Live Test✅ PassedMenu Live Test✅ PassedAbout Live Test✅ PassedGallery Live Test✅ PassedContact Live Test✅ PassedIndexing requested for all pages✅ CompletedSitemap Search Console status⏳ Still processing / showing “Couldn't fetch”
+---
+
+## Important Conclusion
+No further GitHub changes were made after confirming that Google can access the sitemap and website pages.
+
+The current situation is no longer a clear technical accessibility problem. Google has confirmed through the Live Test that the pages are available and can be indexed.
+
+Google states that indexing is not immediate and that newly submitted or discovered pages can take days or longer to be crawled and indexed.
+
+Therefore, the next step is to **wait for Google to process the indexing requests** rather than repeatedly modifying the sitemap or GitHub Pages configuration.
+
+### Next Check
+After some time, check:
+
+- Google Search Console → **Pages**
+- Google Search Console → **Sitemaps**
+- URL Inspection for the homepage
+- Google Search using `site:maharashtrian-thali.github.io/Maharashtrian-Thali/`
+Google recommends allowing at least several days—and its troubleshooting guidance says to allow about a week after a sitemap submission or indexing request before assuming there is a problem.
+
+### Today's Result
+**SEO / Google Indexing setup completed for today.**
+
+**No further changes required today.**
