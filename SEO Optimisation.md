@@ -641,3 +641,52 @@ Google recommends allowing at least several days—and its troubleshooting guida
 **SEO / Google Indexing setup completed for today.**
 
 **No further changes required today.**
+
+---
+
+## Date: September 2, 2026
+
+### Project: Siddhu's Maharashtrian Thali Website
+
+### Daily Activity Log
+
+### Work Completed Today
+
+#### 1. Favicon Preparation
+Created and verified a square (1:1) image sized correctly for Google's requirements and saved it as `favicon.png`.
+
+#### 2. Repository Update
+Uploaded `favicon.png` to the repository's `images` directory.
+
+#### 3. HTML Implementation
+Added the standard favicon link tag to the `<head>` section of all site pages:
+
+```html
+<link rel="icon" type="image/png" href="images/favicon.png">
+```
+
+Updated pages:
+
+- `index.html`
+- `menu.html`
+- `about.html`
+- `gallery.html`
+- `contact.html`
+
+#### 4. Deployment and Verification
+Committed the changes to GitHub, waited for the GitHub Pages deployment, and verified that the new logo displays correctly in the browser tab on the live site.
+
+#### 5. Google Search Console Actions
+Inspected the live homepage URL in Google Search Console:
+
+`https://maharashtrian-thali.github.io/Maharashtrian-Thali/`
+
+Submitted a **Request Indexing** action to prompt Google to recrawl the site and update the search results with the new favicon and correct Site Name.
+
+### Status and Next Steps
+
+Local implementation is 100% complete and working. Google's automated crawl is pending and may take a few days to several weeks before the visual updates appear in live search results.
+
+**Important:** Do not make further changes to the favicon URL while waiting for Google to crawl the site.
+
+
